@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Trailer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0c0c0c; /* Black background */
+      color: white;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Logo */
+    img {
+      max-width: 120px;
+      margin-bottom: 15px;
+    }
+
+    /* Video Container */
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-top: 56.25%;
+      background-color: black;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Movie Info Box */
+    .movie-info {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #1c1c1c; /* Slightly lighter black */
+      border: 1px solid #e50914; /* Red border */
+      border-radius: 10px;
+      display: inline-block;
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .movie-info h2 {
+      font-size: 24px;
+      color: #e50914; /* Red heading */
+      margin: 0 0 10px 0;
+    }
+
+    .movie-info p {
+      font-size: 16px;
+      color: #ddd;
+      margin: 0;
+    }
+
+    /* Watch Now Button */
+    .watch-now-btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #e50914;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .watch-now-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(229, 9, 20, 0.5);
+    }
+
+    /* Download Buttons */
+    .download-btns {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .download-btn {
+      padding: 10px 20px;
+      background-color: #28a745; /* Green for non-premium buttons */
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 10px 0; /* Vertical spacing */
+      display: inline-block;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #218838; /* Slightly darker green on hover */
+      transform: scale(1.05);
+    }
+
+    .premium {
+      background-color: #e50914; /* Red for premium buttons */
+    }
+
+    .premium:hover {
+      background-color: #ff4d4d; /* Lighter red on hover */
+    }
+
+    /* Popup */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 999;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #121212; /* Dark background for popup */
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .popup h3 {
+      color: #e50914;
+    }
+
+    .popup button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #e50914;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .popup button:hover {
+      background-color: #ff4d4d;
+    }
+  </style>
+</head>
+<body>
+  <!-- Company Logo -->
+  <div>
+    <img src="https://i.imghippo.com/files/IFI1305trM.jpg" alt="Company Logo">
+  </div>
+
+  <!-- Video Player -->
+  <div class="video-container">
+    <iframe src="https://youtube.com/embed/mScYq7PzagY" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <!-- Movie Info Box -->
+  <div class="movie-info">
+    <h2>Name: <span id="movieTitle">Trendy Movie</span></h2>
+    <p id="movieDescription">country india,adio hindi</p>
+  </div>
+
+  <!-- Highlighted Watch Now Button -->
+  <div>
+    <a href="https://drive.google.com/file/d/1aQLhJ8z8qI2gso___k-_0fC0KsdkZtxX/view?usp=drive_link" target="_self" class="download-btn">WATCH NOW EP-1</a>
+    <a href="https://drive.google.com/file/d/1Q6NPuOab2GutE0sN_P9miz23WcHvIA9B/view?usp=drive_link" target="_self" class="download-btn">WATCH NOW EP-2</a>
+    <a href="https://drive.google.com/file/d/1AdttEMhaZJY-WNFvnRwXE9oSGwoy19lF/view?usp=drive_link" target="_self" class="download-btn">WATCH NOW EP-3</a>
+    <a href="https://drive.google.com/file/d/1B9gLMH6lTmhnRFD9rgoZ9zNai3_CLljL/view?usp=sharing" target="_self" class="download-btn">WATCH NOW EP-4</a>
+    <a href="https://drive.google.com/file/d/1DelHkBVkTb8ehY1qP7ZM9B4-GkvHfQqs/view?usp=sharing" target="_self" class="download-btn">WATCH NOW EP-5</a>
+    <a href="https://drive.google.com/file/d/1pHCuAoQLeY85hOri46uKjhTnndQhz8mo/view?usp=sharing" target="_self" class="download-btn">WATCH NOW EP-6</a>
+    <a href="https://drive.google.com/file/d/1TUG0EvepqokGNbmqvdkd0ok3WJLf43mC/view?usp=sharing" target="_self" class="download-btn">WATCH NOW EP-7</a>
+    <a href="https://drive.google.com/file/d/1ZThSQP5mgbpmFHdPEPugygsVqeFqu7IP/view?usp=drive_link" target="_self" class="download-btn">WATCH NOW EP-8</a>
+    <a href="https://drive.google.com/file/d/1eF-gm2LP-1yyFg4uNl3uhVB2c7Q9S2Sl/view?usp=sharing" target="_self" class="download-btn">WATCH NOW EP-9</a>
+    <a href="https://drive.google.com/file/d/1Acpunl9KzbXTkQDv7eKiw1baBn8TboeM/view?usp=sharing" target="_self" class="download-btn">WATCH NOW EP-10</a>
+    <a href="#" class="download-btn premium" data-url="https://drive.google.com/file/d/15Xmcl_i4Wmuvux1wCwytP5hf7Z0XVVax/view?usp=sharing">👑 WATCH NOW EP-11</a>
+    <a href="#" class="download-btn premium" data-url="https://drive.google.com/file/d/1xGsuFR7sMeY9MaePNl2Ptfl-pSrnkBqw/view?usp=sharing">👑 WATCH NOW EP-12</a>
+  </div>
+
+ 
+
+  <!-- Popup -->
+  <div class="overlay"></div>
+  <div class="popup" id="popup">
+    <h3>Premium Access Required</h3>
+    <p>👑 buy premium to acses it</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <script>
+    // Movie Information
+    const movieTitle = "WE ALL US DEAD";
+    const movieDescription = "WEB SERIES ,🧟 ZOMBIE ,adio- hindi, country - south korea";
+
+    // Set movie title and description
+    document.getElementById("movieTitle").textContent = movieTitle;
+    document.getElementById("movieDescription").textContent = movieDescription;
+
+    // Check premium status from localStorage
+    const storedPremiumStatus = localStorage.getItem('isPremium') === 'true';
+    const storedPremiumExpiry = localStorage.getItem('premiumExpiry');
+    const premiumExpiryDate = storedPremiumExpiry ? new Date(storedPremiumExpiry) : null;
+
+    const isPremiumUser = storedPremiumStatus && premiumExpiryDate && premiumExpiryDate > new Date();
+
+    // Handle premium buttons
+    document.querySelectorAll('.premium').forEach(button => {
+      if (isPremiumUser) {
+        // Redirect to the premium URL
+        button.href = button.dataset.url;
+      } else {
+        // Non-premium user behavior
+        button.onclick = (e) => {
+          e.preventDefault();
+          showPopup();
+        };
+      }
+    });
+
+    // Show popup
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+      document.querySelector('.overlay').style.display = 'block';
+    }
+
+    // Close popup
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.querySelector('.overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html
